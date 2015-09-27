@@ -1,6 +1,6 @@
 # Chucky - A Distributed Fault-Tolerant Chuck Norris Facts Disher
 
-[Chuck](http://i.imgur.com/wwFsWiA.jpg)
+![Chuck](http://i.imgur.com/wwFsWiA.jpg)
 
 ## Step 1: Figure out your hostname
 
