@@ -52,7 +52,7 @@ iex > Chucky.fact
 
 You can also use `Application.started_applications/1` to see where the application is being run on.
 
-## Step 4: Watching failover in action
+## Step 5: Watching failover in action
 
 Kill the first session (`a@HOSTNAME`), then watch `b@HOSTNAME` get started:
 
@@ -64,7 +64,7 @@ Kill the first session (`a@HOSTNAME`), then watch `b@HOSTNAME` get started:
 07:33:42.300 [info]  b@manticore starting distributed
 ```
 
-## Step 5: Watching takeover in action
+## Step 6: Watching takeover in action
 
 Start `a@HOSTNAME` again:
 
