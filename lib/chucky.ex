@@ -2,12 +2,7 @@ defmodule Chucky do
   use Application
   require Logger
 
-  def start(:normal, _args) do
-    Chucky.Supervisor.start_link
-  end
-
-  def start(:takeover, _args) do
-    Logger.debug "#{self} taking over ..."
+  def start(_type, _args) do
     Chucky.Supervisor.start_link
   end
 
