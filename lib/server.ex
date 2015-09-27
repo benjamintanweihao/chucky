@@ -22,6 +22,7 @@ defmodule Chucky.Server do
     facts = "facts.txt"
              |> File.read!
              |> String.split("\n")
+
     {:ok, facts}
   end
 

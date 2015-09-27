@@ -12,6 +12,7 @@ defmodule Chucky.Mixfile do
 
   def application do
     [applications: [:logger],
+       # registered: [Chucky, Chucky.Supervisor, Chucky.Server],
               mod: {Chucky, []}]
   end
 
