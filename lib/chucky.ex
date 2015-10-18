@@ -8,16 +8,19 @@ defmodule Chucky do
       worker(Chucky.Server, [])
     ]
 
-    case type do
-      {:takeover, old_node} ->
-        Logger.info("#{node} is taking over #{old_node}")
+  case type do
+    :normal ->
+      Logger.info("Application is started on #{node}")
 
-      _ ->
-        Logger.info("#{node} starting distributed")
-    end
+    {:takeover, old_node} ->
+      Logger.info("#{node} is taking over #{old_node}")
 
-    opts = [strategy: :one_for_one, name: {:global, Chucky.Supervisor}]
-    Supervisor.start_link(children, opts)
+    {:failover, old_node} ->
+      Logger.info("#{old_node} is failing over to #{node}")
+  end
+
+  opts = [strategy: :one_for_one, name: {:global, Chucky.Supervisor}]
+  Supervisor.start_link(children, opts)
   end
 
   def fact do
