@@ -16,7 +16,7 @@ defmodule Chucky do
         Logger.info("#{node} starting distributed")
     end
 
-    opts = [strategy: :one_for_one, name: Chucky.Supervisor]
+    opts = [strategy: :one_for_one, name: {:global, Chucky.Supervisor}]
     Supervisor.start_link(children, opts)
   end
 
